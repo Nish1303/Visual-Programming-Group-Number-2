@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon />
+    <RootNamespace>FocusTrack.UI</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <!-- System.Windows.Forms.DataVisualization is required for the Dashboard/Reports charts.
+         NOTE: the real, maintained NuGet package id is "WinForms.DataVisualization" (the old
+         "System.Windows.Forms.DataVisualization" id only ever published prerelease builds).
+         It keeps the same namespace, System.Windows.Forms.DataVisualization.Charting, so no
+         code changes are needed elsewhere. -->
+    <PackageReference Include="WinForms.DataVisualization" Version="1.10.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Referenced only for: (a) Program.cs composition-root wiring (DI registrations +
+         one-time migration call at startup), and (b) the shared DTOs in FocusTrack.Data.Models
+         (SessionFilter, SessionRow, CategoryTotal) used to display data on forms.
+         No Form in FocusTrack.UI.Forms calls DbContext or any repository directly —
+         they only call FocusTrack.Business interfaces. -->
+    <ProjectReference Include="..\FocusTrack.Business\FocusTrack.Business.csproj" />
+    <ProjectReference Include="..\FocusTrack.Data\FocusTrack.Data.csproj" />
+  </ItemGroup>
+
+</Project>

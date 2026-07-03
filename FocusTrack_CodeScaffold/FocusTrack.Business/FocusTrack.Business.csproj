@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <!-- UseWindowsForms is enabled here only for the NotifyIcon type used by
+         NotificationService; no Forms/UI classes are referenced from this layer. -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FocusTrack.Data\FocusTrack.Data.csproj" />
+  </ItemGroup>
+
+</Project>
