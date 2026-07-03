@@ -62,14 +62,4 @@ Or open `FocusTrack.sln` in Visual Studio and press F5 (set `FocusTrack.UI` as t
 FocusTrack starts tracking immediately and minimises to the system tray when you close the
 main window — use the tray icon's context menu to reopen it or exit fully.
 
-## Team / Contributions
 
-See the Requirements Document (Section 3, Team Task Breakdown) for the per-member branch and
-feature ownership, and the final project report for individual contribution summaries.
-
-## AI assistance disclosure
-
-Initial architecture, entity/service scaffolding, and the UML diagrams in the Requirements
-Document were produced with AI assistance (Claude, Anthropic) as a design and learning aid,
-per the module's academic integrity policy (CQA/A/P/03). All feature implementation, testing,
-debugging, and integration were completed and committed individually by team members.
